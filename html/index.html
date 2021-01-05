@@ -1,0 +1,258 @@
+<html>
+    <head>
+        <title>esx tgiann-mdt</title>
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> 
+    </head>
+
+    <body>
+        <div class="tgiann-mdt-main-wrapper" id="tgiann-mdt">
+           
+
+                <div class="tgiann-mdt-inner-main">
+                    <div class="tgiann-mdt-left-sidebar" id="mySidebar">
+                        <ul class="tgiann-mdt-menu">
+                            <button class="sol-menu-ac-kapa" onclick="closeNav()" >&#9776;</button>
+                            <li data-id="plate-checker" class="active"><span class="material-icons">keyboard_arrow_right</span>Vehicle Inquery</li>
+                            <li data-id="search-civilian"><span class="material-icons">keyboard_arrow_right</span>Citizen Inquery</li>
+                            <li data-id="bolos"><span class="material-icons">keyboard_arrow_right</span>Wanted Persons</li>
+                            <li data-id="ceza"><span class="material-icons">keyboard_arrow_right</span>Crime List</li>
+                        </ul>
+                    </div>
+
+                    <div class="page-wrapper">
+                        <button class="sol-menu-ac-kapa sol-menu-ac-kapa_kapa" id="openbtn" onclick="openNav()">&#9776;</button>
+                        <div id="plate-checker" class="page">
+                            <div class="igrenc-yontem"></div>
+                            <div class="top-bar">
+                                <table class="tgiann-mdt-listings">
+                                    <thead>
+                                        <tr>
+                                            <td>Plate</td>
+                                            <td>Firstname</td>
+                                            <td>Lastname</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="plate"></td>
+                                            <td id="firstname"></td>
+                                            <td id="lastname"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="ic">
+                                <div class="plate-input-box">
+                                    <input type="text" id="input-plate" class="input plate-input" name="plate-input" placeholder="Plate">
+                                    <button type="submit" id="search-for-plate" class="search-button">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="search-civilian" class="page" style="overflow-y: auto">
+                            <div class="resultinner">
+                            
+                                <div class="igrenc-yontem"></div>
+                                <div class="top-bar">
+                                    <table class="all-found-users">
+                                        <thead>
+                                            <tr>
+                                                <td>Firstname</td>
+                                                <td>Lastname</td>
+                                                <td>Gender</td>
+                                                <td>DOB</td>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="ic">
+                                    <div class="plate-input-box">
+                                        <input type="text" id="search" class="input plate-input" name="plate-input" placeholder="Firstname Lastname">
+                                        <button type="submit" id="search-for-civilian" class="search-button">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="civilian-details">
+                                <button type="submit" class="karakter-geri-git">Back</button>
+                                <div class="karakter-ilk-bilgi"> 
+                                    <div class="resim"><img src="assets/images/male.png"/></div>
+                                    <div class="karakter-isim-gender">
+                                        <div class="isimsoyisim"></div>
+                                        <div class="identifier" id="playerIdentifier"></div>
+                                    </div>   
+                                    <i class="material-icons karakter-ilk-bilgi-icon">supervisor_account</i>
+                                </div>
+
+                                <div class="karakter-ikinci-bilgi">
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">DOB</div>
+                                        <div class="bilgi-icerik" id="dob"></div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">Bank</div>
+                                        <div class="bilgi-icerik" id="bank">içerik</div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">Job</div>
+                                        <div class="bilgi-icerik" id="job"></div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">GENDER</div>
+                                        <div class="bilgi-icerik" id="gender"></div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik">PHONE NUMBER</div>
+                                        <div class="bilgi-icerik" id="number">içerik</div>
+                                    </div>
+
+                                    <div class="bilgi">
+                                        <div class="bilgi-baslik"></div>
+                                        <div class="bilgi-icerik"></div>
+                                    </div>
+                                </div>
+
+                                <div class="player-cars">
+                                    
+                                </div>
+
+                                <div class="not-sabika-kaydi">
+                                    <div class="sabika">
+                                        <div class="sabika-baslik">Criminal Record</div>
+                                        <div class="sabika-icerik">
+                                            <span class="sabika-icerik-kutu">Crimes Committed</span>   
+                                            <span class="sabika-icerik-kutuceza">Criminal</span>   
+                                            <span class="sabika-icerik-kutux"></span> 
+                                        </div>
+                                        <div class="sabika-icerik-cezalar">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="not">
+                                        <div class="not-baslik">Notes</div>
+                                        <div class="not-icerik">
+                                            <span class="not-icerik-kutu">Explanation</span>   
+                                            <span class="not-icerik-kutux"></span> 
+                                        </div>
+                                        <div class="not-icerik-cezalar">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sabikaekle-notekle-lisanslar">
+                                    <div class="sabika-kaydi-ekle">
+                                        <div class="sabika-ekle-baslik">Add Criminal Record</div>
+                                        <div class="sabika-ekle-icerik">
+                                            <input type="hidden" id="identifier" name="playerid" value="">
+                                            <input type="text" placeholder="Crimes Committed" id="cr-reason" name="reason" class="sabika-ekle-kutu">
+                                            <input type="text" placeholder="Total Fine" id="cr-fine" name="fine" class="sabika-ekle-kutu">
+                                            <input type="text" placeholder="Picture of the Criminal" id="cr-resmi" name="resmi" class="sabika-ekle-kutu">
+                                            <div class="sabika-button">
+                                                <button class="sabika-kaydet" id="save-criminal-record" style="width: 50%; float:left">Add</button>
+                                                <button class="sabika-kaydet" id="takePhoto" style="width: 50%;">Take a Photo</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="not-kaydi-ekle">
+                                        <div class="not-ekle-baslik">Add Notes</div>
+                                        <div class="not-ekle-icerik">
+                                            <input type="text" placeholder="Note" id="note-title" name="offence" class="not-ekle-kutu">
+                                            <button class="not-kaydet" id="save-note" style="width: 100%;">Add</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="lisanslar">
+                                        <div class="lisanslar-baslik">Lisances</div>
+                                        <div class="lisans-baslik"></div>
+                                        <div class="lisanslar-kutu"></div>
+                                    </div>
+                                </div>   
+                            </div> 
+                            
+                        </div>
+
+                        <div id="bolos" class="page">
+                            <div class="igrenc-yontem"></div>
+                            <div class="tgiann-mdt-bolos-dis">
+                                <table class="tgiann-mdt-bolos">
+                                    <span class="bolo-message"></span>
+                                    <thead>
+                                        <tr>
+                                            <td style="width: 12%;">Firstname</td style="width: 20%;">
+                                            <td style="width: 12%;">Lastname</td>
+                                            <td style="width: 10%;">Gender</td>
+                                            <td style="width: 40%;">Reason</td>
+                                            <td style="width: 16%;">Creation Date</td>
+                                            <td style="width: 1%;">Dalete</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="plate-input-box">
+                                <div class="plate-input-box-ic">
+                                    <button type="submit" class="add-bolo pull-right bolos-buton">Add Criminal Record</button>
+                                    <div class="modal-add-bolos">
+                                        <span class="error-bolo"></span>
+                                        <input type="text" id="input-bolos-gender" class="input" name="name" placeholder="Firstname">
+                                        <input type="text" id="input-bolos-height" class="input" name="lastname" placeholder="Lastname">
+                                        <input type="text" id="input-bolos-age" class="input" name="gender" placeholder="Gender">
+                                        <input type="text" id="input-bolos-type-of-crime" class="input" name="reason" placeholder="Reason">
+                                        <div class="modal-add-bolos-button"><button class="button" id="save-bolos" style="width: 28.5%;">Save</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="ceza" class="page" style="overflow-y: auto">
+                            <div class="ceza-top-bar"><div class="ceza-top-bar-ic">LOS SANTOS CRIME LIST</div></div>
+                            <div class="ceza-ic">
+                                
+                                <div class="cezabaslikicerik">
+                                    Bla Bla...
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi-baslik">Criminal</div> <div class="caza-fiyati-baslik">Fine</div> <div class="caza-ayi-baslik">Imprisonment</div> <div class="caza-kamu-baslik">Public Penalty</div>   </div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Test 1</div> <div class="caza-fiyati">400$</div> <div class="caza-ayi">0 Months</div><div class="caza-kamu">-</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Test 2</div> <div class="caza-fiyati">750$</div> <div class="caza-ayi">0 Months</div><div class="caza-kamu">-</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Test 3</div> <div class="caza-fiyati">2500$</div> <div class="caza-ayi">0 Months</div><div class="caza-kamu">-</div></div>
+                                </div>
+
+                                <div class="cezabaslikicerik">
+                                    Bla Bla...
+                                </div>
+                                <div class="cezaicerik">
+                                    <div class="ceza-tablo"><div class="ceza-adi-baslik">Criminal</div> <div class="caza-fiyati-baslik">Fine</div> <div class="caza-ayi-baslik">Imprisonment</div> <div class="caza-kamu-baslik">Public Penalty</div>   </div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Test 1</div> <div class="caza-fiyati">400$</div> <div class="caza-ayi">0 Months</div><div class="caza-kamu">-</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Test 2</div> <div class="caza-fiyati">750$</div> <div class="caza-ayi">0 Months</div><div class="caza-kamu">-</div></div>
+                                    <div class="ceza-tablo"><div class="ceza-adi">Test 3</div> <div class="caza-fiyati">2500$</div> <div class="caza-ayi">0 Months</div><div class="caza-kamu">-</div></div>
+                                </div>
+                        
+                            </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            
+        </div>
+        <script src="js/app.js"></script>
+        <script src="js/jquery-3.4.1.js"></script>
+    </body>
+</html>
